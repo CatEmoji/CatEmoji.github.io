@@ -13,10 +13,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -31,8 +27,11 @@
   const pages = [
     "about",
     "witchknife",
-    "gendergallery",
+    "painting",
+    "brownbuns",
     "lovers",
+    "gendergallery",
+    "tfsh",
     "tlb"
   ];
 
@@ -45,14 +44,19 @@
     return false;
 	}
 
-  document.addEventListener("DOMContentLoaded", function(event) {
+
+  function hashChange(event) {
     if(window.location.hash) {
       var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
       if (pages.includes(hash)) {
         clearDisplayAndShowElement(hash);
       }
     }
-  });
+  }
+
+  window.addEventListener('hashchange', hashChange);
+  document.addEventListener("DOMContentLoaded", hashChange);
+
   </script>
 
   <style>
@@ -63,6 +67,17 @@
     margin-bottom: 25px;
 
     width: 80%;
+  }
+
+  img.portrait {
+    display: inline;
+  }
+
+  p.painting-card {
+    margin-bottom: 2px;
+    margin-left:  auto;
+    margin-right:  auto;
+    text-align: center;
   }
   </style>
 
@@ -83,10 +98,15 @@
     		<ul style="list-style-type:none;">
     			<li><a href="" onclick="return clearDisplayAndShowElement('about');">About</a></li>
           <li>Selected Portfolio:</li>
-          <li><a href="" onclick="return clearDisplayAndShowElement('witchknife');">witchknife (Ongoing)</a></li>
-          <li><a href="" onclick="return clearDisplayAndShowElement('gendergallery');">(g)Ender Gallery (2021)</a></li>
-          <li><a href="" onclick="return clearDisplayAndShowElement('lovers');">The Lovers (2021)</a></li>
-          <li><a href="" onclick="return clearDisplayAndShowElement('tlb');">The Lesbian Body ⚧ (2020)</a></li>
+          <li><a href="#witchknife">witchknife (Ongoing)</a></li>
+          <li><a href="#painting">Painting (Ongoing)</a></li>
+          <li>Video and Media:</li>
+          <li><a href="#brownbuns">Brown Buns (2022)</a></li>
+          <li><a href="#lovers">The Lovers (2021)</a></li>
+          <li><a href="#gendergallery" onclick="return clearDisplayAndShowElement('gendergallery');">(g)Ender Gallery (2021)</a></li>
+          <li>Zines</li>
+          <li><a href="#tfsh">Trans Feminist Self Help Zine, Volume 0 (2022)</a></li>
+          <li><a href="#tlb">The Lesbian Body ⚧ (2020)</a></li>
   			</ul>
     	</div>
 
@@ -100,6 +120,35 @@
         <p>My artistic practice centers an autotheoretical investigation into my body and experiences as a post-surgically transitioned femme, and interogates concepts such as the trans body, sexual and gendered difference, and the intersection of my identities as a dyke and a trans woman. I am particularly interested in how my body is read and consumed as a trans woman who has undergone bottom surgery, and how I can use my body to subvert classic cissexist feminist theory, or engage in the creation of new theory through my artistic and academic practices.</p>
     	</div>
     	
+      <div id="painting" class="nine columns" style="display: none;">
+
+        <div class="twelve columns" style="margin-bottom: 15px;">
+          <a href="./media/painting/pride.jpeg"><img class="portait" src="./media/painting/pride.jpeg"></a>
+          <p class="painting-card">Pride is a Protest (2023)</p>
+          <p class="painting-card">Watercolor and Guache on Cotton Paper</p>
+          <p class="painting-card">22" x 30"</p>
+        </div>
+        <div class="twelve columns">
+          <div class="four columns">
+            <a href="./media/painting/avi.jpg"><img class="portait" src="./media/painting/avi.jpg"></a>
+            <p class="painting-card">Avianna (2021)</p>
+            <p class="painting-card">Acrylic on Canvas </p>
+            <p class="painting-card">9" x 12"</p>
+          </div>
+          <div class="four columns">
+            <a href="./media/painting/sara.jpg"><img class="portait" src="./media/painting/sara.jpg"></a>
+            <p class="painting-card">Sara (2021)</p>
+            <p class="painting-card">Acrylic on Canvas </p>
+            <p class="painting-card">12" x 15"</p>
+          </div>
+          <div class="four columns">
+            <a href="./media/painting/cat.jpg"><img class="portait" src="./media/painting/cat.jpg"></a>
+            <p class="painting-card">Self Portrait (2021)</p>
+            <p class="painting-card">Acrylic on Canvas </p>
+            <p class="painting-card">30" x 40"</p>
+          </div>
+        </div>
+      </div>
       <div id="witchknife" class="nine columns" style="display: none;">
         <img src="./media/witchknife/witchknife.jpg">
         <p>witchknife is cat haines's ongoing solo tran(s)cey drone project. witchknife's drones are improvised rituals that conjure ethereal feedback into beautiful sounds to heal your heart. witchknife has toured across the Canadian Prairies, been installed in the Dunlop Art Gallery's <a href="https://www.youtube.com/watch?v=HwaWXvrJTw4">Digital Media Lounge</a>, and is featured in Bella Vendetta's art porn <i><a href="https://pinklabel.tv/on-demand/film/forced-earth-connection/">Forced Earth Connection</a></i>.</p>
@@ -126,6 +175,11 @@
          <p>(g)Ender Gallery also included a Minecraft resource pack which renamed and reskinned Minecraft blocks to include names and textures drawn from my own body.
          </p>
          <p><a href="./media/endergallery/gendergallery.zip">Download (g)Ender Gallery Resource Pack</a></p>
+      </div>
+
+      <div id="brownbuns" class="nine columns" style="display: none;">
+         <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/791215422?h=79396daf42&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Brown Buns.mp4"></iframe></div>
+         <p>Filmed as part of Regina's 2022 One Take Super 8 event, this collaboration between Cat Haines and Aspen Enzo looks at queer belonging and love.</p>
       </div>
 
       <div id="lovers" class="nine columns" style="display: none;">
@@ -175,6 +229,18 @@
         </p>
         <hr>
     	</div>
+
+      <div id="tfsh" class="nine columns" style="display: none;">
+        <img src="./media/tfshz/FRONT.png">
+        <p>
+          This zine, the first in a series, seeks to specifically unpack the ways in which the medical-industrial complex can control, steal, and ultimately destroy trans people’s bodies, body image, and comfortable embodiments.
+        </p>
+        <p>
+          This zine is deeply personal and draws on my experiences and beliefs. By no means does it represent the best medical advice; in fact, it seeks to provide information beyond the context of “medicine” and considers the cultural and personal implications of how language is used and how our bodies are constructed and deconstructed through social and medical power.
+        </p>
+        <p>
+          You can purchase a physicakl copy of this zine from <a href="https://gravitrongravitron.org/publishing/p/trans-feminist-self-help-zine-volume-0">Gravitron</a> or you can download the zine for free <a href="./media/tfshz/TFSHZ0.pdf">here</a>.
+        </p>
   </div>
 
 <!-- End Document

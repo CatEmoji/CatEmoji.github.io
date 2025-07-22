@@ -1,0 +1,23 @@
+{
+	"block.note_block.flute": {
+		"category": "note_block",
+		"replace": "true",
+		"subtitle": "there is denim jacket i call my armour",
+		"sounds": [{
+			"name": "note/stmy",
+			"preload": "true",
+			"attenuation_distance": 2
+		}]
+	},
+	"block.note_block.guitar": {
+		"category": "note_block",
+		"replace": "true",
+		"subtitle": "oh no, oh no oh no oh no, this isn't happening",
+		"sounds": [{
+			"name": "note/ohno",
+			"preload": "true",
+			"attenuation_distance": 2
+		}]
+	}
+
+}
